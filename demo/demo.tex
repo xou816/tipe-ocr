@@ -1,0 +1,263 @@
+\documentclass[12pt]{article}
+
+\usepackage[french]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage[T1]{fontenc}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage[nottoc,numbib]{tocbibind} 
+
+%\renewcommand{\familydefault}{\sfdefault}
+
+\usepackage{tikz}
+\usetikzlibrary{shapes}
+
+\usepackage{mathtools}
+\usepackage{mathrsfs}
+\usepackage{hyperref}
+\usepackage{wrapfig}
+\usepackage{caption}
+\usepackage{amssymb}
+\usepackage{url}
+
+\usepackage{listings}
+\usepackage{color}
+\definecolor{keywords}{RGB}{255,0,90}
+\definecolor{comments}{RGB}{0,0,113}
+\definecolor{red}{RGB}{160,0,0}
+\definecolor{green}{RGB}{0,150,0}
+\lstset{
+  basicstyle=\ttfamily\small, 
+  keywordstyle=\color{keywords},
+  commentstyle=\color{comments},
+  stringstyle=\color{red},
+  showstringspaces=false,
+  identifierstyle=\color{green},
+  tabsize=2,
+  breaklines=true
+}
+
+\newcommand{\intr}[1]{[\![ #1 ]\!]}
+\newcommand{\ud}{\,\mathrm{d}}
+
+\allowdisplaybreaks
+
+% Spécifiques document
+
+\newcommand{\lc}[1]{l_{#1}}
+\newcommand{\neurone}[2]{n_{ #1 }^{ (#2) }}
+\newcommand{\poids}[3]{p_{#1,#2}^{ (#3) }}
+\newcommand{\nps}[2]{\sigma_{ #1 }^{ (#2) }} % "neurone produit scalaire"
+\newcommand{\err}[3]{e_{ #1 #2 }^{ (#3) }}
+\newcommand{\er}[2]{e_{ #1}^{ (#2) }} % notation simplifiée
+
+\title{\begin{Huge}\textbf{OCR}\end{Huge}\\ \textbf{Reconnaissance de caractères}}
+\author{\textsc{Brondeau} Victor, \textsc{Nédélec} Silvère, \textsc{Trendel} Alexandre}
+\date{}
+
+\begin{document}
+
+% \maketitle
+
+% \vspace{2cm}
+% \begin{center}
+% 	\emph{Travail réalisé dans le cadre des TIPE (session 2015-2016). \\ \textbf{\flqq{} Structures : organisation, complexité, dynamique. \frqq{}}}
+% \end{center}
+% \vspace{2cm}
+
+%\tableofcontents
+
+% \newpage
+
+\pagestyle{headings}
+
+\section{Démonstration des relations de rétropropagation}
+
+	\subsection{Définitions}
+
+		\paragraph{Réseau.}
+		
+			Un réseau de neurones artificiels est une application de $\mathbb{R}^p$ dans $\mathbb{R}^q$. Il comporte plusieurs \textbf{couches de neurones}. On notera $\lc{c}$ le nombre de neurones que compte la couche $c$, et dans la suite, $n$ désignera l'indice de la dernière couche du réseau.
+
+		\paragraph{Neurone.}
+		
+			Un neurone est une application $\varphi : \mathbb{R}^m \to \mathbb{R}$. L'image d'un vecteur $x = (x_1, \ldots, x_m)$ par un neurone est donné par $\varphi(x) = f(\sum_{i=1}^m p_i x_i - b)$, où les réels $p_1, \ldots, p_m$ sont appelés \textbf{poids}, où $f$ est appelée la \textbf{fonction d'activation}, et où $b$ est le \textbf{biais}. Ce dernier paramètre n'est pas pris en compte dans la suite: on peut, sans perte de généralité, ajouter un poids $p_{m+1} = -b$ supplémentaire au neurone et faire en sorte que la coordonnée correspondante de $x$, $x_{m+1}$, soit toujours égale à $1$.
+
+	\subsection{Structure du réseau}
+	
+		\begin{wrapfigure}{r}{130pt}
+			\resizebox {130pt} {!} {
+				\begin{tikzpicture}[x=1cm, y=1cm, font=\huge]
+
+					\tikzstyle{neurone}=[draw, transform shape, circle, minimum size=3cm]
+					\tikzstyle{fleche}=[->, >=latex]
+					\tikzstyle{gris}=[dashed, gray]
+					\tikzstyle{poids}=[midway, sloped, above]
+
+					\node[neurone] (x1) at (0, 12) {$\neurone{1}{c}$};
+					\node[neurone] (x2) at (0, 8) {$\neurone{2}{c}$};
+					\draw (0, 6.1) node {\vdots};
+					\node[neurone] (xk) at (0, 4) {$\neurone{\lc{c}-1}{c}$};
+					\node[neurone] (biais) at (0, 0) {-1};
+					\node[neurone] (xj) at (8, 8) {$\neurone{j}{c+1}$};
+					\node[neurone, gris] (xj+1) at (8, 4) {$\neurone{j+1}{c+1}$};
+
+					\draw[fleche, gris] (x1) -- (xj+1) node[poids] {};
+					\draw[fleche, gris] (x2) -- (xj+1) node[poids] {};
+					\draw[fleche, gris] (xk) -- (xj+1) node[poids] {};
+					\draw[fleche, gris] (biais) -- (xj+1) node[poids] {};
+					\draw[fleche] (x1) -- (xj) node[poids] {$\poids{1}{j}{c+1}$};
+					\draw[fleche] (x2) -- (xj) node[poids] {$\poids{2}{j}{c+1}$};
+					\draw[fleche] (xk) -- (xj) node[poids] {$\poids{\lc{c}-1}{j}{c+1}$};
+					\draw[fleche] (biais) -- (xj) node[poids] {$\poids{\lc{c}}{j}{c+1}$};
+
+				\end{tikzpicture}
+			}
+			\caption*{\footnotesize \emph{Un neurone est connecté à chacun des neurones de la couche précédente.}}
+		\end{wrapfigure}
+
+		Dans notre cas, un neurone d'une couche donnée est ``connecté'' à \emph{tous} les neurones de la couche précédente, c'est-à-dire que le vecteur formé des valeurs scalaires de chacun des neurones de la couche précédente constitue le vecteur d'entrée du neurone considéré. On notera $\neurone{j}{c}$ la sortie du neurone $j$ de la couche $c$ et on notera $\poids{i}{j}{c}$ le poids de la connexion entre $\neurone{j}{c}$ et $\neurone{i}{c-1}$.
+
+		On a donc, pour $c \geq 2$,
+		\begin{equation}
+			\neurone{j}{c} = f ( \sum_{i=1}^{\lc{c-1}} \poids{i}{j}{c} \neurone{i}{c-1} ) = f( \nps{j}{c} )
+		\end{equation}
+		en posant $\nps{j}{c} = \sum_{i=1}^{\lc{c-1}} \poids{i}{j}{c} \neurone{i}{c-1}$.
+
+		Les neurones de la première couche du réseau sont quand à eux l'image du vecteur d'entrée du réseau, noté $x = (x_1, \ldots, x_p)$. On note de même $y = (y_1, \ldots, y_q)$ la sortie du réseau, qui par définition est donnée par
+		\begin{equation*}
+			y = (\neurone{1}{n}, \ldots, \neurone{\lc{n}}{n}).
+		\end{equation*}
+
+		En outre, on voit que le nombre de neurones par couche est arbitraire, mais que la taille d'une couche détermine le nombre d'entrées des neurones de la couche suivante.
+
+	\subsection{Entraînement et rétropropagation}
+
+		On souhaite \textbf{entraîner} le réseau de neurones à classer des vecteurs, c'est-à-dire à associer la même sortie vectorielle (à un certain seuil de tolérance près) à des vecteurs représentants le même objet, et on dit alors que de tels vecteurs appartiennent à la même \textbf{classe}. Pour atteindre cet objectif, on entraîne le réseau au cours de plusieurs \textbf{cycles} de correction. Un cycle correspond au calcul, pour quelques \textbf{échantillons} $(x, t) \in \mathbb{R}^p \times \mathbb{R}^q$, de l'image de $x$ par le réseau (notée $y$) que l'on compare avec $t = (t_1, \ldots, t_q)$ : l'erreur obtenue permettra d'apporter une correction adéquate au réseau. L'\textbf{erreur quadratique} associée aux vecteurs $y$ et $t$ est donnée par
+		\begin{equation}
+			E = \frac{1}{2} \sum_{i=1}^q (t_i - y_i)^2.
+		\end{equation}
+
+		Les seuls paramètres que l'on peut modifier une fois la structure du réseau fixée sont les poids, initialisés à de petites valeurs aléatoires. La correction consiste donc à calculer l'erreur dûe à chaque poids $\poids{j}{k}{c}$, c'est-à-dire la valeur $\frac{\partial E}{\partial \poids{j}{k}{c}}$. On utilise ensuite un algorithme ``à direction de descente'' pour trouver un minimum de la fonction d'erreur à partir de la donnée du gradient ainsi calculé. Cette opération, répétée pour chacun des poids, fait converger l'erreur globale vers zéro.
+
+		Pour un poids $\poids{j}{k}{c}$ donnée, on appliquera donc la correction
+		\begin{equation}
+			\Delta \poids{j}{k}{c} = - \alpha \frac{\partial E}{\partial \poids{j}{k}{c}}
+		\end{equation}
+		où $\alpha$, le \textbf{taux d'apprentissage}, module l'importance de la modification apportée.
+
+		On pose dans la suite
+		\begin{equation}
+			\err{j}{k}{c} = - \frac{ \partial E }{ \partial \poids{j}{k}{c} } \frac{1}{ \neurone{j}{c-1} }
+		\end{equation}
+		ce qui permet d'exprimer la correction par
+		\begin{equation}
+			\Delta \poids{j}{k}{c} =  \alpha \err{j}{k}{c} \neurone{j}{c-1}.
+		\end{equation}
+
+		On souhaite démontrer les relations suivantes, qui permettent de calculer récursivement à partir de la dernière couche la correction à apporter à chacun des poids pour un échantillon donné, d'où le nom de \textbf{rétropropagation}:
+		\begin{align}
+			&\boxed{ \er{k}{n} = f'(\nps{k}{n}) (t_k - y_k) } \\
+			\text{et } &\boxed{ \er{k}{c} = f'(\nps{k}{c}) \sum_{i=1}^{\lc{c+1}} \poids{k}{i}{c+1} \er{i}{c+1} }.
+		\end{align}
+
+		Cette notation à deux indices est licite : la démonstration montre qu'en fait, ces scalaires ne dépendent pas du premier indice, ce qui simplifie le travail algorithmique.
+
+	\subsection{Démonstration}
+	
+		La fonction $E$ est différentiable, on peut donc appliquer la règle de la chaîne. Comme le terme $\poids{j}{k}{c}$ n'apparaît que dans l'expression de $\neurone{k}{c}$,
+		
+		\begin{equation}\label{depart}
+			\frac{ \partial E }{ \partial \poids{j}{k}{c} } = 
+			\sum_{i=1}^{\lc{c}} \frac{ \partial E }{ \partial \neurone{i}{c} } \frac{ \partial \neurone{i}{c} }{ \partial \poids{j}{k}{c} } 
+			= \frac{ \partial E }{ \partial \neurone{k}{c} } \frac{ \partial \neurone{k}{c} }{ \partial \poids{j}{k}{c} }.
+		\end{equation}
+		
+		On peut facilement calculer le membre de droite quelle que soit la couche $c$ considérée. En effet, si on applique à nouveau la règle de la chaîne en remarquant que $\poids{j}{k}{c}$ n'apparaît que pour $\nps{k}{c}$,
+		
+		\begin{equation}\label{terme_a_droite}
+			\frac{ \partial \neurone{k}{c} }{ \partial \poids{j}{k}{c} }
+			= \frac{ \partial \neurone{k}{c} }{ \partial \nps{k}{c} } \frac{ \partial \nps{k}{c} }{ \partial \poids{j}{k}{c} }
+			= f'(\nps{k}{c}) \frac{ \partial }{ \partial \poids{j}{k}{c} } \left( \sum_{i=1}^{\lc{c-1}} \poids{i}{k}{c} \neurone{i}{c-1} \right)
+			= f'(\nps{k}{c}) \neurone{j}{c-1}.
+		\end{equation}
+
+		\paragraph{Couche de sortie.} 
+		
+		Dans le cas de la couche de sortie, indexée $n$, la sortie $\neurone{k}{n}$ d'un neurone est égale au terme $y_k$ du vecteur de sortie. On en déduit que
+		\begin{equation*}
+			\frac{ \partial E }{ \partial \neurone{k}{n} } 
+			= \frac{ \partial E }{ \partial y_k } 
+			= \frac{1}{2} \frac{ \partial }{ \partial y_k } \left( \sum_{i=1}^q (t_i - y_i)^2 \right) = y_k - t_k.
+		\end{equation*}
+
+		On obtient donc la première relation.
+		\begin{equation*}
+			\err{j}{k}{n} = - \frac{ \partial E }{ \partial \poids{j}{k}{n} } \frac{1}{ \neurone{j}{n-1} } = f'(\nps{k}{n}) (t_k - y_k).
+		\end{equation*}
+
+		\paragraph{Couche quelconque.} 
+		
+		Pour une couche quelconque $c$, le calcul de $\frac{ \partial E }{ \partial \neurone{k}{n} }$ n'est pas aussi simple et c'est pourquoi on aboutit à une relation de récurrence. Supposons que l'on connaisse l'erreur sur la couche $c+1$. Les variations du neurone $\neurone{k}{c}$ n'entraînent des variations de l'erreur qu'au travers des neurones de la couche suivante $c+1$ auxquels il est connecté, c'est-à-dire les neurones $\neurone{i}{c+1}, 1 \leq i \leq \lc{c+1}$. La règle de la chaîne permet alors d'écrire que
+
+		\begin{equation*}
+			\frac{ \partial E }{ \partial \neurone{k}{c} } 
+			= \sum_{i=1}^{\lc{c+1}} \frac{ \partial E }{ \partial \neurone{i}{c+1} } \frac{ \partial \neurone{i}{c+1} }{ \partial \neurone{k}{c} }.
+		\end{equation*}
+		
+		En outre, par un calcul similaire à \ref{terme_a_droite},
+		\begin{equation*}
+			\frac{ \partial \neurone{i}{c+1} }{ \partial \neurone{k}{c} } 
+			= \frac{ \partial \neurone{i}{c+1} }{ \partial \nps{i}{c+1} } \frac{ \partial \nps{i}{c+1} }{ \partial \neurone{k}{c} } 
+			= f'( \nps{i}{c+1} ) \frac{ \partial }{ \partial \neurone{k}{c} } \left( \sum_{j=1}^{\lc{c}} \poids{j}{i}{c+1} \neurone{j}{c} \right) \\
+			= f'( \nps{i}{c+1} )  \poids{k}{i}{c+1}.
+		\end{equation*}
+		
+		D'où la formule attendue:
+		
+		\begin{align*}
+			\err{j}{k}{c} &= - \frac{ \partial E }{ \partial \poids{j}{k}{c} } \frac{1}{ \neurone{j}{c-1} } \\
+ 			&= - \frac{ \partial E }{ \partial \neurone{k}{c} } \frac{ \partial \neurone{k}{c} }{ \partial \poids{j}{k}{c} } \frac{1}{ \neurone{j}{c-1} } \text{ d'après \ref{depart}} \\
+ 			&= \frac{ \partial \neurone{k}{c} }{ \partial \poids{j}{k}{c} } \frac{1}{ \neurone{j}{c-1} }
+ 			\sum_{i=1}^{\lc{c+1}} - \frac{ \partial E }{ \partial \neurone{i}{c+1} } \frac{ \partial \neurone{i}{c+1} }{ \partial \neurone{k}{c} } \\
+ 			&= f'(\nps{k}{c}) \neurone{j}{c-1} \frac{1}{ \neurone{j}{c-1} }
+ 			\sum_{i=1}^{\lc{c+1}} - \frac{ \partial E }{ \partial \neurone{i}{c+1} } f'( \nps{i}{c+1} ) \poids{k}{i}{c+1} \\
+ 			&= f'(\nps{k}{c})
+ 			\sum_{i=1}^{\lc{c+1}} - \frac{ \partial E }{ \partial \neurone{i}{c+1} } f'( \nps{i}{c+1} ) \neurone{k}{c} \frac{1}{\neurone{k}{c}} \poids{k}{i}{c+1} \\
+ 			&= f'(\nps{k}{c})
+ 			\sum_{i=1}^{\lc{c+1}} \left( - \frac{ \partial E }{ \partial \neurone{i}{c+1} } \frac{\partial \neurone{i}{c+1}}{\partial \poids{k}{i}{c+1}} \frac{1}{\neurone{k}{c}} \right) \poids{k}{i}{c+1} \text{ d'après \ref{terme_a_droite}} \\
+ 			&= f'(\nps{k}{c})
+ 			\sum_{i=1}^{\lc{c+1}} \err{k}{i}{c+1} \poids{k}{i}{c+1}.
+		\end{align*}
+		
+	% \subsection{En pratique}
+	
+	% 	\paragraph{Inertie.}
+		
+	% 	En pratique, on introduit un autre paramètre, outre le taux d'apprentissage, appelé \textbf{inertie} et noté $i$. Si on note $\Delta \poids{j}{k}{c}(t)$ la correction apportée au cours d'un cycle particulier, alors $i$ est défini de la manière suivante:
+	% 	\begin{equation}
+	% 		\Delta \poids{j}{k}{c}(t) =  \alpha \er{k}{c} \neurone{j}{c-1} + i \Delta \poids{j}{k}{c}(t-1).
+	% 	\end{equation}
+	% 	Ce paramètre semble améliorer la vitesse de convergence et ``lisser'' les courbes.
+	
+	% 	\paragraph{Fonction d'activation.}
+		
+	% 	Les fonctions d'activation utilisées sont souvent choisies à valeurs dans $[0, 1]$ ou $[-1, 1]$ et croissantes, ce qui se permet de faire un parallèle avec les neurones biologiques, qui sont actifs au delà d'un certain seuil ($1$), inactifs sinon ($0$ ou $-1$ selon la convention choisie). En outre, on peut penser intuitivement que cela rend l'entraînement moins contraignant, les sorties étant bornées. Enfin, la sortie peut ainsi s'interpréter en termes de probabilité (pour la première convention). Par exemple, on emploie souvent la fonction \textbf{sigmoïde}, dont la dérivée est facilement calculable en fonction d'elle même:
+	% 	\begin{equation*}
+	% 		f(x) = \frac{1}{1 + \mathrm{e}^{-x}} \text{ et } f'(x) = f(x) (1 - f(x)).
+	% 	\end{equation*}
+	
+	% 	\paragraph{Forme des échantillons.} 
+		
+	% 	Dans le cas où la fonction d'activation des neurones est à valeurs dans $[0, 1]$, on peut chercher à associer aux vecteurs d'une même classe un vecteur de la forme $(0, \ldots, 0, 1, 0, \ldots, 0) \in \mathbb{R}^q$, et on peut donc distinguer de cette manière $q$ classes. Cette façon de faire, quoique non optimale, permet néamoins d'associer à un neurone de sortie une classe spécifique.
+		
+	% 	\paragraph{Entraînement hors ligne, entraînement en ligne.} À rédiger.
+		
+
+% \newpage
+
+% \nocite{*}
+% \bibliographystyle{unsrt-fr}
+% \bibliography{tipe}
+
+\end{document}

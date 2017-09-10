@@ -1,0 +1,46 @@
+\documentclass[crop,tikz]{standalone}
+
+\usepackage[french]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage[T1]{fontenc}
+
+\usepackage{amssymb}
+\usepackage{amsmath}
+
+\newcommand{\lc}[1]{l_{#1}}
+\newcommand{\neurone}[2]{n_{ #1 }^{ (#2) }}
+\newcommand{\poids}[3]{p_{#1, #2}^{ (#3) }}
+\newcommand{\nps}[2]{\sigma_{ #1 }^{ (#2) }} % "neurone produit scalaire"
+\newcommand{\err}[3]{e_{ #1 #2 }^{ (#3) }}
+\newcommand{\er}[2]{e_{ #1}^{ (#2) }} % notation simplifiée
+
+\begin{document}
+
+\begin{tikzpicture}[font=\LARGE, scale=1, x=1cm, y=1cm]
+
+	\tikzstyle{neurone}=[draw, transform shape, circle, minimum size=3cm]
+	\tikzstyle{fleche}=[->, >=latex]
+	\tikzstyle{gris}=[dashed, gray]
+	\tikzstyle{poids}=[midway, sloped, above]
+
+	\node[neurone] (x1) at (0, 13) {$\neurone{1}{c}$};
+	\node[neurone] (x2) at (0, 9) {$\neurone{2}{c}$};
+	\draw (0, 6.5) node {\vdots};
+	\node[neurone] (xk) at (0, 4) {$\neurone{\lc{c}-1}{c}$};
+	\node[neurone] (biais) at (0, 0) {-1};
+	\node[neurone] (xj) at (8, 8.5) {$\neurone{j}{c+1}$};
+	\node[neurone, gris] (xj+1) at (8, 4.4) {$\neurone{j+1}{c+1}$};
+
+	\draw[fleche, gris] (x1) -- (xj+1) node[poids] {};
+	\draw[fleche, gris] (x2) -- (xj+1) node[poids] {};
+	\draw[fleche, gris] (xk) -- (xj+1) node[poids] {};
+	\draw[fleche, gris] (biais) -- (xj+1) node[poids] {};
+	\draw[fleche] (x1) -- (xj) node[poids] {$\poids{1}{j}{c+1}$};
+	\draw[fleche] (x2) -- (xj) node[poids] {$\poids{2}{j}{c+1}$};
+	\draw[fleche] (xk) -- (xj) node[poids] {$\poids{\lc{c}-1}{j}{c+1}$};
+	\draw[fleche] (biais) -- (xj) node[poids] {$\poids{\lc{c}}{j}{c+1}$};
+
+\end{tikzpicture}
+
+\end{document}

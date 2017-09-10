@@ -1,0 +1,105 @@
+\documentclass[20pt]{extarticle}
+
+% Généralités
+\usepackage[french]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage[T1]{fontenc}
+\usepackage[margin=2cm, headsep=0cm, headheight=25pt]{geometry}
+\usepackage{hyperref}
+\usepackage{caption}
+
+% Police
+% \renewcommand{\familydefault}{\sfdefault}
+% \usepackage{cmbright}
+% %\usepackage[math]{iwona}
+
+% Tikz
+\usepackage{tikz}
+\usetikzlibrary{decorations.pathreplacing}
+
+% Maths
+\usepackage{amssymb}
+\usepackage{amsmath}
+
+% Spécifiques document
+\newcommand{\lc}[1]{l_{#1}}
+\newcommand{\neurone}[2]{n_{ #1 }^{ (#2) }}
+\newcommand{\poids}[3]{p_{#1, #2}^{ (#3) }}
+\newcommand{\nps}[2]{\sigma_{ #1 }^{ (#2) }} % "neurone produit scalaire"
+\newcommand{\err}[3]{e_{ #1 #2 }^{ (#3) }}
+\newcommand{\er}[2]{e_{ #1}^{ (#2) }} % notation simplifiée
+
+% En têtes, pieds de page
+\usepackage{fancyhdr}
+\lhead{}
+\chead{}
+\rhead{\color{gris} \textbf{Reconnaissance de caractères}}
+\lfoot{}
+\cfoot{}
+\rfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Listes
+\usepackage{enumitem}
+\frenchbsetup{StandardItemizeEnv=true, StandardEnumerateEnv=true}
+\setlist[itemize]{label=$\triangleright$, itemsep=0.5cm}
+
+% Couleurs
+\usepackage{xcolor}
+\definecolor{gris}{gray}{0.2}
+
+% Pour des bouts de code
+\usepackage{listings}
+\lstset{
+  basicstyle=\ttfamily\small, 
+  keywordstyle=\textbf,
+  commentstyle=\color{gris},
+  stringstyle=\textit,
+  showstringspaces=false,
+  tabsize=2,
+  breaklines=true
+}
+
+% Émulations diaporama
+\newenvironment{slide}{\topskip 0pt \vspace*{\fill}}{\vspace*{\fill}}
+\newcommand{\slidetitle}[1]{\hfill \textbf{\large #1}}
+
+% Autres
+\newcommand{\coderef}[1]{\raisebox{10pt}{{\scriptsize \texttt{[#1]}}}}
+
+\begin{document}
+
+% \pagestyle{empty}
+
+% \begin{slide}
+
+% 	\begin{center}
+
+% 		\textbf{\color{gris} \Huge OCR} \\ 
+% 		\vspace{0.5cm} 
+% 		\textbf{\color{gris} \Large Reconnaissance de caractères} \\
+% 		\vspace{1cm}
+% 		Brondeau Victor, Nédélec Silvère, Trendel Alexandre \\
+
+% 		\vspace{8cm}
+% 		\textbf{\small \color{gris} TIPE session 2016 \\ \flqq{} Structures : organisation, complexité, dynamique. \frqq{}}
+
+% 	\end{center}
+
+% \end{slide}
+
+\input{diapos/principe_general.tex}
+\input{diapos/vectorisation.tex}
+\input{diapos/reseau_et_neurones.tex}
+\input{diapos/reconnaissance.tex}
+\input{diapos/principe_apprentissage.tex}
+\input{diapos/retropropagation.tex}
+\input{diapos/py.tex}
+\input{diapos/etude_experimentale.tex}
+%bonus
+\input{diapos/methode_knn.tex}
+\input{diapos/algo_separation.tex}
+
+\end{document}

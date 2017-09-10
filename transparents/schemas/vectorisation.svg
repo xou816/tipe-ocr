@@ -1,0 +1,374 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="203"
+   height="303"
+   id="svg3097"
+   version="1.1"
+   inkscape:version="0.48.4 r9939"
+   sodipodi:docname="vectorisation.svg">
+  <defs
+     id="defs3099" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1.979899"
+     inkscape:cx="85.485818"
+     inkscape:cy="197.61014"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="true"
+     inkscape:snap-bbox="true"
+     inkscape:bbox-paths="true"
+     inkscape:snap-bbox-midpoints="true"
+     inkscape:window-width="1366"
+     inkscape:window-height="744"
+     inkscape:window-x="0"
+     inkscape:window-y="24"
+     inkscape:window-maximized="1"
+     fit-margin-top="1"
+     fit-margin-right="1"
+     fit-margin-left="1"
+     fit-margin-bottom="1">
+    <inkscape:grid
+       type="xygrid"
+       id="grid3105"
+       empspacing="2"
+       visible="true"
+       enabled="true"
+       snapvisiblegridlinesonly="true"
+       spacingx="25px"
+       spacingy="25px"
+       dotted="false"
+       originx="2px"
+       originy="-198px" />
+  </sodipodi:namedview>
+  <metadata
+     id="metadata3102">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Calque 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(2,-551.36218)">
+    <path
+       style="fill:#ababab;fill-opacity:1"
+       d="m 161.55845,849.99376 c -1.71429,-1.30264 -3.1169,-4.02548 -3.1169,-6.05081 0,-2.02531 -1.10363,-5.24936 -2.45252,-7.16455 -3.8181,-5.42103 -15.27713,-44.96962 -23.11953,-79.79252 -4.83658,-21.47608 -8.33002,-32.06095 -10.90239,-33.03357 -14.3684,-5.43267 -64.74794,-7.66628 -69.74381,-3.09214 -1.62704,1.48969 -5.22905,10.59331 -8.00449,20.23027 -2.77542,9.63695 -6.16582,20.18621 -7.5342,23.44279 -1.36837,3.25658 -3.17042,13.63706 -4.00456,23.06771 -2.23146,25.22847 -3.69511,27.26124 -19.62874,27.26124 l -13.05131,0 0,-9.57391 c 0,-5.26562 1.15377,-12.14886 2.56394,-15.29604 1.41015,-3.14719 3.70311,-14.15966 5.09547,-24.47215 1.39235,-10.3125 4.20279,-23.19079 6.24541,-28.61842 2.40813,-6.39887 3.22606,-14.53188 2.32642,-23.13266 -1.3444,-12.85283 -1.1801,-13.32414 5.29739,-15.19549 5.41564,-1.56459 7.0329,-3.69506 8.51819,-11.22129 1.01484,-5.14237 8.15342,-18.52988 15.98914,-29.98563 7.78567,-11.38256 16.29279,-25.67657 18.9047,-31.76447 2.61192,-6.08788 14.28236,-25.05737 25.9343,-42.15441 l 21.18536,-31.08553 15.17681,0 15.1768,0 1.44444,14.30922 c 0.79444,7.87007 1.9465,39.6217 2.56012,70.55921 0.66044,33.29795 2.25492,58.46467 3.90769,61.67763 2.10564,4.09334 4.56374,5.43499 9.99914,5.4576 6.22174,0.0259 14.52012,1.71009 35.12923,7.12981 3.4937,0.91876 4.54545,3.42547 4.54545,10.83357 l 0,9.63823 -14.32096,0 c -7.87652,0 -16.61358,-1.08797 -19.41569,-2.41769 -9.91674,-4.70594 -10.37794,0.35024 -2.7409,30.04927 8.62293,33.53295 13.24252,47.92174 20.59397,64.14473 2.95142,6.51316 5.39498,15.61677 5.4301,20.23026 l 0.0639,8.38816 -12.46752,0 c -6.85715,0 -13.87014,-1.06579 -15.58442,-2.36842 z M 119.9596,653.5135 c -0.93952,-42.4191 -2.81931,-53.56972 -7.54275,-44.74247 -1.11499,2.08369 -5.21537,7.82934 -9.11195,12.76813 -3.89661,4.93877 -9.42448,14.54492 -12.28419,21.34701 -2.85969,6.80207 -11.1426,20.84572 -18.40645,31.2081 -7.26382,10.36239 -12.58432,20.07368 -11.8233,21.58062 1.06761,2.11407 8.09697,2.73993 30.77339,2.73993 l 29.38975,0 -0.9945,-44.90132 z"
+       id="path3191"
+       inkscape:connector-curvature="0" />
+    <path
+       id="path3207"
+       style="fill:none;stroke:#000000;stroke-width:0.50000000000000000;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+       d="m -0.5,802.86218 200,0 m -200,-50 200,0 m -200,-50 200,0 m -200,-50 200,0 m -200,-50 200,0 m -50,-50 0,300 m -50,0 0,-300 m -50,300 0,-300"
+       inkscape:connector-curvature="0" />
+    <text
+       xml:space="preserve"
+       style="font-size:20.00000381px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="7.2365599"
+       y="583.80219"
+       id="text3978"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3980"
+         x="7.2365599"
+         y="583.80219"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Latin Modern Math;-inkscape-font-specification:Latin Modern Math">0.00</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:20.00000381px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="56.986561"
+       y="583.90216"
+       id="text3978-3"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3980-2"
+         x="56.986561"
+         y="583.90216"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Latin Modern Math;-inkscape-font-specification:Latin Modern Math">0.07</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:20.00000381px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="107.26656"
+       y="583.80219"
+       id="text3978-2"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3980-7"
+         x="107.26656"
+         y="583.80219"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Latin Modern Math;-inkscape-font-specification:Latin Modern Math">0.39</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:20.00000381px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="157.23656"
+       y="583.80219"
+       id="text3978-1"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3980-28"
+         x="157.23656"
+         y="583.80219"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Latin Modern Math;-inkscape-font-specification:Latin Modern Math">0.00</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:20.00000381px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="7.2365599"
+       y="633.80219"
+       id="text3978-0"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3980-6"
+         x="7.2365599"
+         y="633.80219"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Latin Modern Math;-inkscape-font-specification:Latin Modern Math">0.00</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:20.00000381px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="57.346561"
+       y="633.80219"
+       id="text3978-38"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3980-8"
+         x="57.346561"
+         y="633.80219"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Latin Modern Math;-inkscape-font-specification:Latin Modern Math">0.32</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:20.00000381px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="107.26656"
+       y="633.80219"
+       id="text3978-6"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3980-85"
+         x="107.26656"
+         y="633.80219"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Latin Modern Math;-inkscape-font-specification:Latin Modern Math">0.29</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:20.00000381px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="157.23656"
+       y="633.80219"
+       id="text3978-7"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3980-3"
+         x="157.23656"
+         y="633.80219"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Latin Modern Math;-inkscape-font-specification:Latin Modern Math">0.00</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:20.00000381px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="7.2665596"
+       y="683.80219"
+       id="text3978-23"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3980-0"
+         x="7.2665596"
+         y="683.80219"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Latin Modern Math;-inkscape-font-specification:Latin Modern Math">0.16</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:20.00000381px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="57.346561"
+       y="683.80219"
+       id="text3978-03"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3980-287"
+         x="57.346561"
+         y="683.80219"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Latin Modern Math;-inkscape-font-specification:Latin Modern Math">0.25</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:20.00000381px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="107.26656"
+       y="683.80219"
+       id="text3978-232"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3980-1"
+         x="107.26656"
+         y="683.80219"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Latin Modern Math;-inkscape-font-specification:Latin Modern Math">0.29</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:20.00000381px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="157.23656"
+       y="683.80219"
+       id="text3978-4"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3980-66"
+         x="157.23656"
+         y="683.80219"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Latin Modern Math;-inkscape-font-specification:Latin Modern Math">0.00</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:20.00000381px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="7.3465595"
+       y="733.80219"
+       id="text3978-70"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3980-5"
+         x="7.3465595"
+         y="733.80219"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Latin Modern Math;-inkscape-font-specification:Latin Modern Math">0.32</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:20.00000381px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="57.12656"
+       y="733.91217"
+       id="text3978-8"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3980-4"
+         x="57.12656"
+         y="733.91217"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Latin Modern Math;-inkscape-font-specification:Latin Modern Math">0.14</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:20.00000381px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="107.26656"
+       y="733.80219"
+       id="text3978-31"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3980-06"
+         x="107.26656"
+         y="733.80219"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Latin Modern Math;-inkscape-font-specification:Latin Modern Math">0.33</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:20.00000381px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="157.12656"
+       y="733.91217"
+       id="text3978-10"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3980-40"
+         x="157.12656"
+         y="733.91217"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Latin Modern Math;-inkscape-font-specification:Latin Modern Math">0.24</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:20.00000381px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="7.2665596"
+       y="783.80219"
+       id="text3978-5"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3980-25"
+         x="7.2665596"
+         y="783.80219"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Latin Modern Math;-inkscape-font-specification:Latin Modern Math">0.29</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:20.00000381px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="57.236561"
+       y="783.80219"
+       id="text3978-9"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3980-76"
+         x="57.236561"
+         y="783.80219"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Latin Modern Math;-inkscape-font-specification:Latin Modern Math">0.00</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:20.00000381px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="107.12656"
+       y="783.91217"
+       id="text3978-12"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3980-00"
+         x="107.12656"
+         y="783.91217"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Latin Modern Math;-inkscape-font-specification:Latin Modern Math">0.14</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:20.00000381px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="157.26656"
+       y="783.80219"
+       id="text3978-14"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3980-54"
+         x="157.26656"
+         y="783.80219"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Latin Modern Math;-inkscape-font-specification:Latin Modern Math">0.16</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:20.00000381px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="7.1265597"
+       y="833.91217"
+       id="text3978-50"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3980-23"
+         x="7.1265597"
+         y="833.91217"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Latin Modern Math;-inkscape-font-specification:Latin Modern Math">0.04</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:20.00000381px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="57.236561"
+       y="833.80219"
+       id="text3978-74"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3980-87"
+         x="57.236561"
+         y="833.80219"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Latin Modern Math;-inkscape-font-specification:Latin Modern Math">0.00</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:20.00000381px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="107.34656"
+       y="833.80219"
+       id="text3978-81"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3980-08"
+         x="107.34656"
+         y="833.80219"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Latin Modern Math;-inkscape-font-specification:Latin Modern Math">0.02</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:20.00000381px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="157.26656"
+       y="833.80219"
+       id="text3978-02"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3980-04"
+         x="157.26656"
+         y="833.80219"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Latin Modern Math;-inkscape-font-specification:Latin Modern Math">0.26</tspan></text>
+  </g>
+</svg>

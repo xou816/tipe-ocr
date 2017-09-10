@@ -1,0 +1,21 @@
+\clearpage
+\slidetitle{Méthode des \textit{k} plus proches voisins}
+
+\begin{slide}
+
+	\begin{itemize}
+
+		\item Alternative très simple aux réseaux de neurones.
+
+		\item On convertit en vecteur l'image du caractère à reconnaître.
+
+		\item L'entier $k$ est fixé. On sélectionne dans la base d'échantillons les $k$ plus proches vecteurs du vecteur image pour la norme euclidienne.
+
+		\item On identifie la classe la plus représentée parmi ces $k$ vecteurs. 
+
+		\item \textbf{Avantage:} pas de phase d'apprentissage, uniquement besoin d'une base d'échantillons.
+		\item \textbf{Inconvénient:} il faut avoir une large base d'échantillons accessibles lors de la reconnaissance.
+
+	\end{itemize}
+
+\end{slide}

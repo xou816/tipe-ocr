@@ -1,0 +1,27 @@
+\clearpage
+\slidetitle{Rétropropagation}
+
+\begin{slide}
+
+\begin{itemize}
+
+	\item Posons pour tout neurone indicé $k$ d'une couche $c$
+	\begin{equation*}
+		\er{k}{c} = - \frac{ \partial E }{ \partial \poids{j}{k}{c} } \frac{1}{ \neurone{j}{c-1} }.
+	\end{equation*}
+
+	\item La correction à apporter à chacun des poids du réseau devient
+	\begin{equation*}
+		\Delta \poids{j}{k}{c} =  \alpha \er{k}{c} \neurone{j}{c-1}.
+	\end{equation*} 
+
+	\item On montre à l'aide de la formule de la chaîne les relations suivantes (réseau à $n$ couches):
+
+	\begin{align*}
+		& \er{k}{n} = f'(\nps{k}{n}) (t_k - y_k) \\
+		\text{et } & \er{k}{c} = f'(\nps{k}{c}) \sum_{i=1}^{\lc{c+1}} \poids{k}{i}{c+1} \er{i}{c+1}.
+	\end{align*}
+
+\end{itemize}
+
+\end{slide}
